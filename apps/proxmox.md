@@ -16,7 +16,7 @@ qemu-img convert vm-100.qcow2 vm-100.raw
 ```
 qemu-img resize -f raw vm-100.raw 10G
 ```
-3. Convert back to qcow2#
+3. Convert back to qcow2
 ```
 qemu-img convert -p -O qcow2 vm-100.raw vm-100.qcow2
 ```
