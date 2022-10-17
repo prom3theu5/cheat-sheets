@@ -2,12 +2,14 @@
 
 1. Add GPG Signing Key
 ```bash
-sudo curl https://deb.releases.teleport.dev/teleport-pubkey.asc \ -o /usr/share/keyrings/teleport-archive-keyring.asc
+sudo curl https://apt.releases.teleport.dev/gpg \ -o /usr/share/keyrings/teleport-archive-keyring.asc
 ```
 
 2. Add Teleport Repository
 ```bash
-echo "deb [signed-by=/usr/share/keyrings/teleport-archive-keyring.asc] https://deb.releases.teleport.dev/ stable main" \ | sudo tee /etc/apt/sources.list.d/teleport.list > /dev/null
+source /etc/os-release
+
+echo "deb [signed-by=/usr/share/keyrings/teleport-archive-keyring.asc] \ https://apt.releases.teleport.dev/${ID?} ${VERSION_CODENAME?} stable/v10" \| sudo tee /etc/apt/sources.list.d/teleport.list > /dev/null
 ```
 
 3. Update Apt
@@ -28,7 +30,7 @@ sudo apt-get install teleport
 sudo teleport configure -o /etc/teleport.yaml  \  
 --cluster-name=example.domain.com \  
 --public-addr=teleport.example.domain.com:443 \  
---cert-file=/etc/letsencrypt/live/example.domain.com/cert.pem \  
+--cert-file=/etc/letsencrypt/live/example.domain.com/fullchain.pem \  
 --key-file=/etc/letsencrypt/live/example.domain.com/privkey.pem
 ```
 

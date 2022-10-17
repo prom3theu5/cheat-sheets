@@ -1,15 +1,14 @@
-1. Add CertBot source
+1. Ensure Snap is installed
 ```bash
-sudo apt-get update
-sudo apt-get install software-properties-common
-sudo add-apt-repository universe
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt-get update
+sudo apt update
+sudo apt install -y snapd
+sudo snap install core; sudo snap refresh core
 ```
 
 2. Install certbot
 ```bash
-sudo apt-get install certbot
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```
 
 3.  Open port 80 UFW Firewall
