@@ -7,3 +7,5 @@
 [[sed]]
 [[ufw]]
 [[user]]
+[[bash]]
+

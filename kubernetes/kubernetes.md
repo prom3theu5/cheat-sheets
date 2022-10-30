@@ -1,3 +1,4 @@
+[[general]]
 [[k3s]]
 [[k3s-install-ha-embeddeddb]]
 [[k3s-install-ha-externaldb]]

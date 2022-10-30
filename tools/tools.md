@@ -14,6 +14,7 @@
 [[vagrant]]
 [[vscode]]
 [[wsl]]
+[[rclone]]
 
 ## Mac Specific
 
