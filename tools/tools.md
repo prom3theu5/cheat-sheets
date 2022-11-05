@@ -10,6 +10,7 @@
 [[nmap]]
 [[openssh]]
 [[openssl]]
+[[pulumi]]
 [[terraform]]
 [[vagrant]]
 [[vscode]]
