@@ -29,6 +29,7 @@ A cheat sheet for uncommon Git commands
 | Command | Description |
 | - | - |
 | `git add file.txt`                        | Stage file |
+| `git add --chmod=+x -- file.sh`           | Stage file as executable on checkout (useful for scripts)
 | `git add -p`|--patch file.txt`            | Stage some but not all changes in a file |
 | `git mv file1.txt file2.txt`              | Move/rename file |
 | `git rm --cached file.txt`                | Unstage file |
