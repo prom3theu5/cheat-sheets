@@ -7,3 +7,16 @@
 [[kubectl]]
 [[kubernetes-automation]]
 [[kubernetes-dns]]
+
+### apps
+
+[[argocd]]
+[[cert-manager]]
+[[grafana]]
+[[longhorn]]
+[[portainer]]
+[[prometheus]]
+[[rancher]]
+[[traefik]]
+[[velero]]
+
