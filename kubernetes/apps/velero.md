@@ -21,6 +21,18 @@ Please use the version selector at the top of the site to ensure you are using t
 
 <hr>
 
+### Minio Credentials Format
+
+```sh
+nano ./credentials-velero
+```
+
+```toml
+[default]
+aws_access_key_id = <username>
+aws_secret_access_key = <password>
+```
+
 ### Install on cluster backed by openebs (Restic backups) with minio
 
 ```sh
