@@ -116,3 +116,49 @@ unqualified-search-registries = ["registry.fedoraproject.org", "registry.access.
 This property contains a list of all the registries that will be checked (in order) when looking up a short name image. **Be sure the values in here are ones that you trust!**
 
 With that change made we can `exit` from the virtual machine and Podman should then search for any short name images using these registries from now on.
+
+<hr>
+
+Fixes for TestContainers under Podman
+
+Edit `~/.testcontainers.properties` and add the following line
+
+```
+ryuk.container.privileged=true
+```
+
+Then run the following
+
+```
+brew install podman
+podman machine init -v $HOME:$HOME
+```
+
+If you're podman 4.1 or higher, you don't need the the `-v $HOME:$HOME` volume mount.
+
+If you're on mac,
+
+```
+sudo /opt/homebrew/Cellar/podman/4.0.3/bin/podman-mac-helper install
+```
+
+Then (for all oses)
+
+```
+podman machine set --rootful
+podman machine start
+```
+
+The rootful part makes ryuk behave ok, based on testing (see [containers/podman#14238](https://github.com/containers/podman/discussions/14238)). 
+If ryuk is still causing problems or you don't want to run rootful then `export TESTCONTAINERS_RYUK_DISABLED=true` also does the trick, but containers can sometimes hang around and cause problems.
+
+Finally, if you're on Mac M1, update podman to behave better with images for a different architecture (see [https://edofic.com/posts/2021-09-12-podman-m1-amd64/](https://edofic.com/posts/2021-09-12-podman-m1-amd64/) )
+
+```
+podman machine ssh
+sudo -i
+rpm-ostree install qemu-user-static
+systemctl reboot
+```
+
+Once the virtual machine restarts, you should be good to run testcontainers.
