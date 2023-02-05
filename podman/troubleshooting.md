@@ -162,3 +162,11 @@ systemctl reboot
 ```
 
 Once the virtual machine restarts, you should be good to run testcontainers.
+
+ #### DOCKER Host helper for mac
+
+ Run the following command to ensure that the podman host socket is discoverable on the default DOCKER_HOST env var on a mac
+
+ ```
+ sudo podman-mac-helper install
+ ```
