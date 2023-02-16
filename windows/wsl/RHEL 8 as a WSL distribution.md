@@ -31,9 +31,11 @@
 
 ### Create WSL Instance and Start It
 
-1.  Create the WSL instance by importing the tarball:
-    -   `wsl --import RHEL rhel8.tar.gz --version 2`
-2.  Create a shortcut to wsl -d rhel to start, or start manually.
+1.  Create a directory for WSL
+    -   `mkdir c:\wsl`
+2.  Create the WSL instance by importing the tarball:
+    -   `wsl --import RHEL c:\wsl rhel8.tar.gz --version 2`
+3.  Create a shortcut to wsl -d rhel to start, or start manually.
 
 
 ### OPTIONAL: Change Default user in WSL Instance
