@@ -27,6 +27,7 @@ for f in $(ls); do tar xvf $f; done
 tar cv . | xz > distro-name.tar.xz
 ```
 
+
 ## Use Image by importing to wsl
 
 1.  Create a directory for WSL
